@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 不用
 /// </summary>
-public class UpdatePlayerMove : AnimatorMotor {
+public class UpdatePlayerMove : AnimatorMotor
+{
 
     /// <summary>
     /// 奔跑类型(直跑还是转弯跑)

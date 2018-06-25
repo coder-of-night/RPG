@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class SkillInfo : MonoBehaviour {
+/// <summary>
+/// 单个技能信息类
+/// </summary>
+public class SkillInfo : MonoBehaviour 
+{
 	/// <summary>
 	/// 技能类型(治愈,加成,单体攻击,群攻)
 	/// </summary>

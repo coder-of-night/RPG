@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 任务面板的按钮功能控制类
 /// </summary>
-public class QuestBoardButtonControl : MonoBehaviour {
+public class QuestBoardButtonControl : MonoBehaviour 
+{
 	/// <summary>
 	/// 任务相关的僵尸编号
 	/// </summary>
@@ -35,7 +36,7 @@ public class QuestBoardButtonControl : MonoBehaviour {
 		questZombieIndex = 0;
 	}
 	/// <summary>
-	/// Accept按钮单击函数
+	/// Accept按钮单击回调
 	/// </summary>
 	public void AcceptButtonClick()
 	{
@@ -51,7 +52,7 @@ public class QuestBoardButtonControl : MonoBehaviour {
 		}
 	}
 	/// <summary>
-	/// cancle按钮单击函数
+	/// cancle按钮单击回调
 	/// </summary>
 	public void CancelButtonClick()
 	{
@@ -59,7 +60,7 @@ public class QuestBoardButtonControl : MonoBehaviour {
 		Hide();
 	}
 	/// <summary>
-	/// ok按钮单击函数
+	/// ok按钮单击回调
 	/// </summary>
 	public void OkButtonClick()
 	{
@@ -78,7 +79,7 @@ public class QuestBoardButtonControl : MonoBehaviour {
 		}
 	}
 	/// <summary>
-	/// Again按钮单击函数
+	/// Again按钮单击回调
 	/// </summary>
 	public void AgainButtonClick()
 	{

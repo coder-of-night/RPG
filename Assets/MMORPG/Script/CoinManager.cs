@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 金币管理类
+/// 金币管理器
 /// </summary>
-public class CoinManager : MonoBehaviour {
+public class CoinManager : MonoBehaviour 
+{
 	/// <summary>
 	/// 所有金币数量
 	/// </summary>
 	public int allCoinNum = 0;
+	/// <summary>
+	/// 所有显示金币的UILabel
+	/// </summary>
 	public UILabel[] coinNumText;
+
 	private static CoinManager _instacne = null;
 	public static CoinManager Instance()
 	{
@@ -18,8 +23,6 @@ public class CoinManager : MonoBehaviour {
 	void Awake()
 	{
 		_instacne = this;
-	}
-	void Update () {
 	}
 	/// <summary>
 	/// 增加金币
@@ -45,10 +48,13 @@ public class CoinManager : MonoBehaviour {
 		}
 		else
 		{
-			//钱不够
+			Debug.Log("钱不够");
 			return false;
 		}	
 	}
+	/// <summary>
+	/// 更新所有金币显示
+	/// </summary>
 	public void UpdateAllCoinText()
 	{
 		foreach(UILabel temp in coinNumText)

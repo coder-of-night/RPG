@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 暂不用的镜头旋转脚本
+/// 暂不用的镜头旋转脚本(不用)
 /// </summary>
-public class MouseRotate : MonoBehaviour {
+public class MouseRotate : MonoBehaviour 
+{
 	public Transform target;
 	public float distance = 4.0f;
 	public float xSpeed = 250.0f;

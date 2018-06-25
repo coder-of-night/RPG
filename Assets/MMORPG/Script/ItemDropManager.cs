@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 物品掉落功能管理类
 /// </summary>
-public class ItemDropManager : MonoBehaviour {
+public class ItemDropManager : MonoBehaviour
+ {
 	private static ItemDropManager _instance = null;
 	public static ItemDropManager Instance()
 	{

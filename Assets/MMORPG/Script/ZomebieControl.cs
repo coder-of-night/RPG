@@ -4,8 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 僵尸逻辑控制类
 /// </summary>
-public class ZomebieControl : MonoBehaviour {
-	
+public class ZomebieControl : MonoBehaviour 
+{
 	/// <summary>
 	/// 此僵尸的id
 	/// </summary>
@@ -50,12 +50,12 @@ public class ZomebieControl : MonoBehaviour {
 	private bool onceDropAndAchievement = true;
 	void Start () 
 	{
-		
 		thisZombieIndex = 0;
 		onceDropAndAchievement = true;
 		followpos = GameObject.FindWithTag("Player").GetComponentInChildren<FollowPos>().transform;
 		dis = Vector3.Distance(transform.position,followpos.position);
 		zombieState  = EnemyCommon.CurrentState.Parse;
+		//iTween参数初始化
 		args = new Hashtable(); 
 		args.Add("path",paths);
 		args.Add("easeType","Linear");

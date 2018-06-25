@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// npc武器商店面板触发功能类
+/// npc武器商店面板触发器
 /// </summary>
 public class ShopTrigger : MonoBehaviour {
 void OnTriggerStay(Collider other)

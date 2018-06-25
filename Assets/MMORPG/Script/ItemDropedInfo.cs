@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 掉落物品的信息类
 /// </summary>
-public class ItemDropedInfo : MonoBehaviour {
+public class ItemDropedInfo : MonoBehaviour 
+{
 	/// <summary>
 	/// 物品id
 	/// </summary>

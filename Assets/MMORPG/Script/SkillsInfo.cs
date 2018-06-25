@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 技能信息管理
+/// </summary>
 public class SkillsInfo : MonoBehaviour 
 {
 	private static SkillsInfo _instance = null;

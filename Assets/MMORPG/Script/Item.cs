@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 物品功能类
 /// </summary>
-public class Item : UIDragDropItem {
+public class Item : UIDragDropItem 
+{
 	/// <summary>
 	/// 此item的id
 	/// </summary>
@@ -170,6 +171,11 @@ public class Item : UIDragDropItem {
         str += "出售价：" + info.price_sell;
 		return str;
 	}
+	/// <summary>
+	/// 获取装备的info显示信息
+	/// </summary>
+	/// <param name="info">传入的是对应id的物品ObjectInfo对象</param>
+	/// <returns></returns>
 	public string GetEquipMessage(ObjectInfo info)
 	{
 		string str = "";

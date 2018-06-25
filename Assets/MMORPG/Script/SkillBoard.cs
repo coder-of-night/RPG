@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class SkillBoard : MonoBehaviour {
+/// <summary>
+/// 技能系统
+/// </summary>
+public class SkillBoard : MonoBehaviour 
+{
 	private static SkillBoard _instance = null;
 	public static SkillBoard Instance()
 	{
 		return _instance;
 	}
 	private TweenPosition tweenPos;
+	/// <summary>
+	/// 技能的prefab
+	/// </summary>
 	public SkillItem skillItem;
 	public GameObject uigrid;
 	private Vector3 thispos = new Vector3(43, 48, 0);
@@ -20,6 +26,9 @@ public class SkillBoard : MonoBehaviour {
 	{
 		tweenPos = this.GetComponent<TweenPosition>();
 	}
+	/// <summary>
+	/// 升级解锁技能监听
+	/// </summary>
 	public void ListenToUnlockSkill()
 	{
 		switch(PlayerStatusInfo.Instance().rank)
@@ -27,6 +36,10 @@ public class SkillBoard : MonoBehaviour {
 			case 2 : AddOneSkillById(4001); AddOneSkillById(4002); AddOneSkillById(4003); break;
 		}
 	}
+	/// <summary>
+	/// 添加技能
+	/// </summary>
+	/// <param name="id">技能id</param>
 	public void AddOneSkillById(int id)
 	{
 		skillItem.SetThisSkillById(id);
@@ -52,6 +65,9 @@ public class SkillBoard : MonoBehaviour {
 		Debug.Log("没找到对应技能");
 		return null;
 	}
+	/// <summary>
+	/// 关闭面板按钮回调
+	/// </summary>
 	public void CloseButtonClick()
 	{
 		BoardManager.Instance().SwitchShowBoard(BoardManager.BoardShow.NONE);

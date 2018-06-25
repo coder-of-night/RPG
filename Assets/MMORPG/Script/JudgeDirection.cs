@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 使角色始终面向摄像机正前方的脚本(不用)
 /// </summary>
-public class JudgeDirection : MonoBehaviour {
+public class JudgeDirection : MonoBehaviour 
+{
 	/// <summary>
 	/// camera面向方向在水平方向的投影对象引用
 	/// </summary>

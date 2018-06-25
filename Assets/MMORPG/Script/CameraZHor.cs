@@ -6,15 +6,13 @@ using UnityEngine;
 /// </summary>
 public class CameraZHor : MonoBehaviour
 {
-	
+	/// <summary>
+	/// 相机transform
+	/// </summary>
 	public Transform c_transform;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void Update () 
+	{
 		transform.localEulerAngles = new Vector3(0,c_transform.localEulerAngles.y,0);
 	}
 	

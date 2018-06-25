@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 技能发射器
+/// </summary>
 public class SkillShoot : MonoBehaviour 
 {
 	private static SkillShoot _instance = null;
@@ -9,7 +11,11 @@ public class SkillShoot : MonoBehaviour
 	{
 		return _instance;
 	}
+	/// <summary>
+	/// player对象
+	/// </summary>
 	public GameObject player;
+	//所有技能特效对象
 	public GameObject cureHpFx;
 	public GameObject buffAtkFx;
 	public GameObject multiAtk1Fx;
@@ -21,7 +27,6 @@ public class SkillShoot : MonoBehaviour
 	}
 	void Update () 
 	{
-
 		if(Input.GetKeyDown(KeyCode.Alpha1))
 		{
 			ShotCutBoard.Instance().UseOneGridSkill(1);
@@ -43,6 +48,11 @@ public class SkillShoot : MonoBehaviour
 			ShotCutBoard.Instance().UseOneGridSkill(5);
 		}
 	}
+	/// <summary>
+	/// 发射技能
+	/// </summary>
+	/// <param name="id">技能id</param>
+	/// <param name="info">技能info</param>
 	public void ShootSkill(int id, SkillInfo info)
 	{
 		switch(info.skillType)
@@ -52,6 +62,10 @@ public class SkillShoot : MonoBehaviour
 			case SkillInfo.SkillType.MultiTarget : MultiAttackDo(info); break;
 		}
 	}
+	/// <summary>
+	/// Cure技能发射
+	/// </summary>
+	/// <param name="info">技能info</param>
 	private void CureDo(SkillInfo info)
 	{
 		GameObject fx =  Instantiate(cureHpFx);
@@ -65,6 +79,10 @@ public class SkillShoot : MonoBehaviour
 			case SkillInfo.SkillEffectType.MP : PlayerStatusManager.Instance().AddMp(info.amount); break;
 		}
 	}
+	/// <summary>
+	/// Buff技能发射
+	/// </summary>
+	/// <param name="info"></param>
 	private void BuffDo(SkillInfo info)
 	{
 		StartCoroutine(BuffDoEnumerator(info));
@@ -82,9 +100,15 @@ public class SkillShoot : MonoBehaviour
 		Destroy(fx);
 		PlayerStatusManager.Instance().ReduceProperties(info.skillEffectType, info.amount);
 	}
+	/// <summary>
+	/// 多体攻击技能发射
+	/// </summary>
+	/// <param name="info">技能info</param>
 	private void MultiAttackDo(SkillInfo info)
 	{
+		//定义技能伤害
 		skillControllers[0].damageNum = info.amount;
+		
 		Vector3 initPos = player.transform.TransformPoint(player.GetComponentInChildren<FollowPos>().transform.localPosition + Vector3.forward * 3.3f);
 		GameObject fx = Instantiate(multiAtk1Fx,initPos,player.transform.rotation);
 		

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 背包装物品的格子功能类
+/// 背包栏管理
 /// </summary>
-public class GridOfItem : MonoBehaviour {
+public class GridOfItem : MonoBehaviour 
+{
 	/// <summary>
 	/// 当前Grid中物品的id(默认值为0,可以判别是否是空Grid)
 	/// </summary>
@@ -22,14 +23,6 @@ public class GridOfItem : MonoBehaviour {
 	/// </summary>
 	public UILabel numLabel;
 
-	void Start () 
-	{
-		//numLabel = this.GetComponentInChildren<UILabel>(true);
-	}
-	
-	
-	void Update () {
-	}
 	/// <summary>
 	/// 设置当前Grid中的item(记录了id和ObjectInfo即物品全部信息)
 	/// </summary>

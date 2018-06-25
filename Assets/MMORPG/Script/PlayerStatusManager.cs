@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 玩家属性信息管理类
 /// </summary>
-public class PlayerStatusManager : AnimatorMotor {
+public class PlayerStatusManager : AnimatorMotor
+{
 	private static PlayerStatusManager _instance = null;
 	public static PlayerStatusManager Instance()
 	{

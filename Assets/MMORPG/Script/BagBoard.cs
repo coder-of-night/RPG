@@ -2,9 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 /// <summary>
-/// 背包控制类,管理向背包中添加物品
+/// 背包系统
 /// </summary>
-public class BagBoard : MonoBehaviour {
+public class BagBoard : MonoBehaviour 
+{
 
 	private static BagBoard _instance = null;
 	public static BagBoard Instance()
@@ -71,6 +72,9 @@ public class BagBoard : MonoBehaviour {
 			}
 		}
 	}
+	/// <summary>
+	/// 关闭按钮回调
+	/// </summary>
 	public void CloseButtonClick()
 	{
 		BoardManager.Instance().SwitchShowBoard(BoardManager.BoardShow.NONE);
@@ -86,6 +90,9 @@ public class BagBoard : MonoBehaviour {
 		Global.playerState = Global.State.TipState;
 		tweenPos.PlayForward();
 	}
+	/// <summary>
+	/// 切换背包页面回调
+	/// </summary>
 	public void SwitchPageButtonClick(GameObject go)
 	{
 		if(go.name == "Left")
@@ -100,3 +107,4 @@ public class BagBoard : MonoBehaviour {
 		}
 	}
 }
+

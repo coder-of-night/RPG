@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 僵尸生成器
 /// </summary>
-public class ZombieSpawner : MonoBehaviour {
+public class ZombieSpawner : MonoBehaviour 
+{
 	/// <summary>
 	/// 要生成的僵尸数组
 	/// </summary>

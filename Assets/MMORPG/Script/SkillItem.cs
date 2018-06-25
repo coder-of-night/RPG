@@ -1,24 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class SkillItem : MonoBehaviour {
+/// <summary>
+/// 技能信息类
+/// </summary>
+public class SkillItem : MonoBehaviour 
+{	
+	/// <summary>
+	/// 技能cd状态
+	/// </summary>
 	public enum SkillCDState
 	{
 		Ready,
 		Cold
 	}
+	/// <summary>
+	/// 技能cd状态对象(默认Ready)
+	/// </summary>
 	public SkillCDState skillCdState = SkillCDState.Ready;
 	public int id = 0;
 	public  SkillInfo info;
 	public UISprite icon;
 	public UILabel infoText;
 	public SkillDragController skillDragController;
+	/// <summary>
+	/// 技能CD
+	/// </summary>
 	public float maxCD;
+	/// <summary>
+	/// 倒数CD
+	/// </summary>
 	public float currentCD;
+
 	void Update()
 	{
-		
 		if(skillCdState == SkillCDState.Cold)
 		{
 			currentCD -= Time.deltaTime;
@@ -29,7 +44,10 @@ public class SkillItem : MonoBehaviour {
 			}
 		}
 	}
-
+	/// <summary>
+	/// 设置当前技能信息
+	/// </summary>
+	/// <param name="id"></param>
 	public void SetThisSkillById(int id)
 	{
 		this.id = id;
@@ -47,6 +65,10 @@ public class SkillItem : MonoBehaviour {
 		}
 		infoText.text = message;
 	}
+	/// <summary>
+	/// 获取Cure类技能描述
+	/// </summary>
+	/// <returns></returns>
 	public string GetCureMessage()
 	{
 		string str = "";
@@ -62,6 +84,10 @@ public class SkillItem : MonoBehaviour {
 		str += "解锁:  " + info.unlockRank + "级";
 		return str;
 	}
+	/// <summary>
+	/// 获取Buff类技能描述
+	/// </summary>
+	/// <returns></returns>
 	public string GetBuffMessage()
 	{
 		string str = "";
@@ -77,6 +103,10 @@ public class SkillItem : MonoBehaviour {
 		str += "解锁:  " + info.unlockRank + "级";
 		return str;
 	}
+	/// <summary>
+	/// 获取MultiAttack类技能描述
+	/// </summary>
+	/// <returns></returns>
 	public string GetMultiAttackMessage()
 	{
 		string str = "";
@@ -92,10 +122,17 @@ public class SkillItem : MonoBehaviour {
 		str += "解锁:  " + info.unlockRank + "级";
 		return str;
 	}
+	/// <summary>
+	/// 设置当前技能为冷却状态
+	/// </summary>
 	public void SetSkillColdState()
 	{
 		skillCdState = SkillCDState.Cold;
 	}
+	/// <summary>
+	/// 获取当前技能是否Ready状态
+	/// </summary>
+	/// <returns>Ready返回true</returns>
 	public bool GetSkillReadyState()
 	{
 		return (skillCdState == SkillCDState.Ready ? true : false);

@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class EquipBoard : MonoBehaviour {
+/// <summary>
+/// 装备系统
+/// </summary>
+public class EquipBoard : MonoBehaviour 
+{
 
 	private static EquipBoard _instance = null;
 	public static EquipBoard Instance()
@@ -23,8 +26,8 @@ public class EquipBoard : MonoBehaviour {
 	/// <summary>
 	/// 穿戴情况处理
 	/// </summary>
-	/// <param name="id"></param>
-	/// <returns></returns>
+	/// <param name="id">要穿戴装备id</param>
+	/// <returns>成功穿戴return true</returns>
 	public bool WearEquipmentById(int id)
 	{
 		ObjectInfo info = ObjectsInfo.Instance().GetObjectInfoById(id);
@@ -35,11 +38,11 @@ public class EquipBoard : MonoBehaviour {
 		GridOfEquip tempGrid = null;
 		switch(info.weartype)
 		{
-			case ObjectInfo.WearType.Headgear :  tempGrid = headgear; break;
-			case ObjectInfo.WearType.Armor : 	 tempGrid = armor; break;
-			case ObjectInfo.WearType.Hand : 	 tempGrid = hand;    AppearChange.Instance().SwitchWeaponAppear(id); break;
-			case ObjectInfo.WearType.Accessory : tempGrid = accessory; break;
-			case ObjectInfo.WearType.Shoe : 	 tempGrid = shoe; break;
+			case ObjectInfo.WearType.Headgear :  tempGrid = headgear;  												 break;
+			case ObjectInfo.WearType.Armor : 	 tempGrid = armor; 	  												 break;
+			case ObjectInfo.WearType.Hand : 	 tempGrid = hand;    AppearChange.Instance().SwitchWeaponAppear(id); break; //目前只有武器可更换外观
+			case ObjectInfo.WearType.Accessory : tempGrid = accessory; 												 break;
+			case ObjectInfo.WearType.Shoe : 	 tempGrid = shoe;      												 break;
 		}
 		//对应装备栏已经有装备的情况,先卸下装备,使装备栏空且物品栏加入改装备
 		if(tempGrid.id != 0)
@@ -55,7 +58,9 @@ public class EquipBoard : MonoBehaviour {
 		tempGrid.SetThisGridEquipById(id, info);
 		return true;
 	}
-	
+	/// <summary>
+	/// 关闭面板回调
+	/// </summary>
 	public void CloseButtonClick()
 	{
 		BoardManager.Instance().SwitchShowBoard(BoardManager.BoardShow.NONE);

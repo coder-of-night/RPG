@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 玩家属性信息类
 /// </summary>
-public class PlayerStatusInfo : MonoBehaviour {
+public class PlayerStatusInfo : MonoBehaviour 
+{
 	private static PlayerStatusInfo _instance = null;
 	public static PlayerStatusInfo Instance()
 	{

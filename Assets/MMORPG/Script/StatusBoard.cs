@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class StatusBoard : MonoBehaviour {
+/// <summary>
+/// 人物属性系统
+/// </summary>
+public class StatusBoard : MonoBehaviour
+{
 	private static StatusBoard _instance = null;
 	public static StatusBoard Instance()
 	{
 		return _instance;
 	}
 	public UILabel hpNum,mpNum,atkNum,defNum,spNum,pointNum;
+	/// <summary>
+	/// 加点按钮对象
+	/// </summary>
 	public GameObject[] addPointButtons;
 	private TweenPosition tweenPos;
 	void Awake()
@@ -47,12 +53,19 @@ public class StatusBoard : MonoBehaviour {
 			}
 		}
 	}
+	/// <summary>
+	/// 加点按钮回调
+	/// </summary>
+	/// <param name="go">按钮对象</param>
 	public void PointAddButtonClick(GameObject go)
 	{
 		PlayerStatusManager.Instance().AddProperties(go.name);
 		PlayerStatusManager.Instance().ReducePoint(1);
 		UpdateStatusShow();
 	}
+	/// <summary>
+	/// 关闭面板按钮回调
+	/// </summary>
 	public void CloseButtonClick()
 	{
 		BoardManager.Instance().SwitchShowBoard(BoardManager.BoardShow.NONE);

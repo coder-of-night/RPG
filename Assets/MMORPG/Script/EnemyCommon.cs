@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 敌人公共继承类
+/// 所有敌人公共继承类
 /// </summary>
-public class EnemyCommon : MonoBehaviour {
+public class EnemyCommon : MonoBehaviour 
+{
 	private ZomebieControl zombie;
 	/// <summary>
 	/// 僵尸状态机
 	/// </summary>
-	public enum CurrentState{
+	public enum CurrentState
+	{
 		Parse,
 		Follow,
 		Attack,
@@ -32,14 +34,10 @@ public class EnemyCommon : MonoBehaviour {
 	/// 特效位置
 	/// </summary>
 	public Transform effectPos;
-	// Use this for initialization
-	void Start () {
+
+	void Start () 
+	{
 		zombie = this.GetComponent<ZomebieControl>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 	//被攻击逻辑
 	void OnTriggerEnter(Collider other)

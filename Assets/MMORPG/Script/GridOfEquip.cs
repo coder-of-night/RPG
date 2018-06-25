@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class GridOfEquip : MonoBehaviour {
+/// <summary>
+/// 装备栏管理
+/// </summary>
+public class GridOfEquip : MonoBehaviour
+{
 	public int id = 0;
 	private ObjectInfo info = null;
+	/// <summary>
+	/// 向此装备栏添加装备信息
+	/// </summary>
+	/// <param name="id">装备id</param>
+	/// <param name="info">装备info</param>
 	public void SetThisGridEquipById(int id, ObjectInfo info)
 	{
 		this.id = id;
@@ -15,6 +23,9 @@ public class GridOfEquip : MonoBehaviour {
 		//赋予玩家装备的属性
 		PlayerStatusManager.Instance().AddProperties(info);
 	}
+	/// <summary>
+	/// 从此装备栏中移除装备信息
+	/// </summary>
 	public void UnloadThisGridEquip()
 	{
 		//移除装备赋予玩家的属性

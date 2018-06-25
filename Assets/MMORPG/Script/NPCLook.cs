@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class NPCLook : MonoBehaviour {
-
+/// <summary>
+/// npc看向player
+/// </summary>
+public class NPCLook : MonoBehaviour 
+{
+	/// <summary>
+	/// player对象
+	/// </summary>
 	public GameObject player;
+	/// <summary>
+	/// npc头部
+	/// </summary>
 	public GameObject head;
 	private Quaternion initrotation;
 	void Start()

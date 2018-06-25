@@ -1,11 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ShopItem : MonoBehaviour {
+/// <summary>
+/// 商店物品功能类
+/// </summary>
+public class ShopItem : MonoBehaviour 
+{
 	public int id = 0;
 	public UISprite icon;
 	public UILabel infoText;
+	/// <summary>
+	/// 设置对应物品信息
+	/// </summary>
+	/// <param name="id"></param>
 	public void SetThisShopItemById(int id)
 	{
 		this.id = id;
@@ -19,6 +26,11 @@ public class ShopItem : MonoBehaviour {
 		}
 		infoText.text = message;
 	}
+	/// <summary>
+	/// 获取药品描述
+	/// </summary>
+	/// <param name="info"></param>
+	/// <returns></returns>
 	public string GetDrugMessage(ObjectInfo info)
 	{
 		string str = "";
@@ -28,6 +40,11 @@ public class ShopItem : MonoBehaviour {
         str += "购买价: " + info.price_buy;
 		return str;
 	}
+	/// <summary>
+	/// 获取装备描述
+	/// </summary>
+	/// <param name="info"></param>
+	/// <returns></returns>
 	public string GetEquipMessage(ObjectInfo info)
 	{
 		string str = "";
@@ -55,6 +72,9 @@ public class ShopItem : MonoBehaviour {
         str += "购买价：" + info.price_buy;
 		return str;
 	}
+	/// <summary>
+	/// Buy按钮回调
+	/// </summary>
 	public void BuyButtonClick()
 	{
 		int price = ObjectsInfo.Instance().GetObjectInfoById(id).price_buy;

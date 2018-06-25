@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// y高度为0的player坐标(便于僵尸追踪)
 /// </summary>
-public class FollowPos : MonoBehaviour {
+public class FollowPos : MonoBehaviour 
+{
 	/// <summary>
 	/// 玩家transform
 	/// </summary>

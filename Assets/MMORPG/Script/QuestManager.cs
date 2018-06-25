@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 任务状态、进度管理
 /// </summary>
-public class QuestManager : MonoBehaviour {
+public class QuestManager : MonoBehaviour 
+{
 	/// <summary>
 	/// 任务的进行状态
 	/// </summary>

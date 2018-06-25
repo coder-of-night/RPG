@@ -4,7 +4,8 @@ using UnityEngine;
 /// <summary>
 /// 单一物品属性类
 /// </summary>
-public class ObjectInfo : MonoBehaviour {
+public class ObjectInfo : MonoBehaviour 
+{
 	public enum ObjectType 
     {
     	Drug,
