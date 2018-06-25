@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 敌人公共继承类
+/// </summary>
 public class EnemyCommon : MonoBehaviour {
 	private ZomebieControl zombie;
 	/// <summary>
