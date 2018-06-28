@@ -4,14 +4,14 @@ using UnityEngine;
 /// <summary>
 /// 技能系统
 /// </summary>
-public class SkillBoard : MonoBehaviour 
+public class SkillBoard : TweenPosCtrl 
 {
 	private static SkillBoard _instance = null;
 	public static SkillBoard Instance()
 	{
 		return _instance;
 	}
-	private TweenPosition tweenPos;
+
 	/// <summary>
 	/// 技能的prefab
 	/// </summary>
@@ -21,11 +21,9 @@ public class SkillBoard : MonoBehaviour
 	void Awake()
 	{
 		_instance = this;
+        base.Init();
 	}
-	void Start()
-	{
-		tweenPos = this.GetComponent<TweenPosition>();
-	}
+
 	/// <summary>
 	/// 升级解锁技能监听
 	/// </summary>

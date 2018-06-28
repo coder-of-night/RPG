@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 人物属性系统
 /// </summary>
-public class StatusBoard : MonoBehaviour
+public class StatusBoard : TweenPosCtrl
 {
 	private static StatusBoard _instance = null;
 	public static StatusBoard Instance()
@@ -16,14 +16,13 @@ public class StatusBoard : MonoBehaviour
 	/// 加点按钮对象
 	/// </summary>
 	public GameObject[] addPointButtons;
-	private TweenPosition tweenPos;
 	void Awake()
 	{
 		_instance = this;
+        base.Init();
 	}
 	void Start () 
 	{
-		tweenPos = this.GetComponent<TweenPosition>();
 		UpdateStatusShow();
 	}
 	/// <summary>

@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 装备系统
 /// </summary>
-public class EquipBoard : MonoBehaviour 
+public class EquipBoard : TweenPosCtrl 
 {
 
 	private static EquipBoard _instance = null;
@@ -14,15 +14,13 @@ public class EquipBoard : MonoBehaviour
 	}
 	public GridOfEquip headgear,armor,hand,accessory,shoe;
 	public GameObject newEquip;
-	private TweenPosition tweenPos;
+	
 	void Awake()
 	{
 		_instance = this;
+        base.Init();
 	}
-	void Start()
-	{
-		tweenPos = this.GetComponent<TweenPosition>();
-	}
+	
 	/// <summary>
 	/// 穿戴情况处理
 	/// </summary>

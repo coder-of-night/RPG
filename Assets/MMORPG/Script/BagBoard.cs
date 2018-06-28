@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// 背包系统
 /// </summary>
-public class BagBoard : MonoBehaviour 
+public class BagBoard : TweenPosCtrl 
 {
 
 	private static BagBoard _instance = null;
@@ -14,7 +14,6 @@ public class BagBoard : MonoBehaviour
 	}
 	public List<GridOfItem> gridList = new List<GridOfItem>();
 	
-	private TweenPosition tweenPos;
 	/// <summary>
 	/// item的prefab
 	/// </summary>
@@ -23,10 +22,10 @@ public class BagBoard : MonoBehaviour
 	void Awake()
 	{
 		_instance = this;
+        base.Init();
 	}
 	void Start()
 	{
-		tweenPos = this.GetComponent<TweenPosition>();
 		page1.SetActive(true);
 		page2.SetActive(false);
 	}

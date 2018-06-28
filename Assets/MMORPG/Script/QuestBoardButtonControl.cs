@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 任务面板的按钮功能控制类
 /// </summary>
-public class QuestBoardButtonControl : MonoBehaviour 
+public class QuestBoardButtonControl : TweenPosCtrl 
 {
 	/// <summary>
 	/// 任务相关的僵尸编号
@@ -23,7 +23,7 @@ public class QuestBoardButtonControl : MonoBehaviour
 	public GameObject againButton;
 	public GameObject acceptButton;
 	public GameObject cancelButton;
-	public TweenPosition tweenPos;
+	
 	private static QuestBoardButtonControl _instance = null;
 	public static QuestBoardButtonControl Instance()
 	{
@@ -33,6 +33,7 @@ public class QuestBoardButtonControl : MonoBehaviour
 	void Awake()
 	{
 		_instance = this;
+        base.Init();
 		questZombieIndex = 0;
 	}
 	/// <summary>

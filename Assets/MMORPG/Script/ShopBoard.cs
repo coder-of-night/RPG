@@ -4,14 +4,14 @@ using UnityEngine;
 /// <summary>
 /// 商店系统
 /// </summary>
-public class ShopBoard : MonoBehaviour 
+public class ShopBoard : TweenPosCtrl 
 {
 	private static ShopBoard _instance = null;
 	public static ShopBoard Instance()
 	{
 		return _instance;
 	}
-	private TweenPosition tweenPos;
+
 	/// <summary>
 	/// 商店物品prefab
 	/// </summary>
@@ -21,12 +21,10 @@ public class ShopBoard : MonoBehaviour
 	void Awake()
 	{
 		_instance = this;
+        base.Init();
 		thispos = new Vector3(43, 48, 0);
 	}
-	void Start ()
-	{
-		tweenPos = this.GetComponent<TweenPosition>();
-	}
+
 	/// <summary>
 	/// 向商店中添加一个物品
 	/// </summary>
