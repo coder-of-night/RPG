@@ -14,8 +14,9 @@ public class TestGame : MonoBehaviour
 	}
 	void Update ()
 	{
-		//背包加药品
-		if(Input.GetKeyDown(KeyCode.P))
+#if UnityEditor
+        //背包加药品
+        if(Input.GetKeyDown(KeyCode.P))
 		{
 			int x = 0;
 			BagBoard.Instance().PickOneItemById(x = Random.Range(1001,1004));
@@ -67,5 +68,6 @@ public class TestGame : MonoBehaviour
 			SkillBoard.Instance().AddOneSkillById(4002);
 			SkillBoard.Instance().AddOneSkillById(4003);
 		}
+#endif
 	}
 }
