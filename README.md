@@ -1,5 +1,6 @@
 # RPG
 RPG
-1.made with Unity2017.3.1
 
-2.游戏中按住Alt可释放鼠标
+1.made with Unity2017.3.1
+2.场景文件在Assets/MMORPG目录下
+3.游戏中按住Alt可释放鼠标
